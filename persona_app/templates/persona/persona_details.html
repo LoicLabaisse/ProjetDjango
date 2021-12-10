@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %}Profil de
+{{persona_object.first_name}}{% endblock title %} {% block content %}
+<a class="btn btn-success link_list" href="{% url 'url_persona_list' %}">Retour à la liste</a>
+<div class="card" style="width: 18rem">
+  <img class="card-img-top" src="{{persona_object.picture}}" />
+
+  <div class="card-body">
+    <h3>
+      {{ persona_object.first_name }} {{persona_object.last_name}}
+      <p>{{persona_object.age}} ans</p>
+      (ID: {{persona_object.id}})
+    </h3>
+    <p class="card-text">Email : {{persona_object.email}}</p>
+    <p class="card-text">Pseudo : {{persona_object.username}}</p>
+    <p class="card-text">Adresse : {{persona_object.address_street}}</p>
+    <p class="card-text">
+      Numéro de l'adresse : {{persona_object.address_number}}
+    </p>
+    <p class="card-text">Ville : {{persona_object.city}}</p>
+    <p class="card-text">Code Postal : {{persona_object.postcode}}</p>
+    <p class="card-text">Pays : {{persona_object.country}}</p>
+  </div>
+
+  
+</div>
+
+ {% endblock content %}

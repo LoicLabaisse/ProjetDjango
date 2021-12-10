@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Exploration de la liste des personnes{% endblock title %}
+
+{% block content %}
+    <h1 class='title'>Bonjour Mr Gladrat ! Bienvenue sur notre Liste !</h1>
+        <ul class="list-group">
+            {% for personne in persona_list %}
+        
+                <li class="list-group-item">
+                 {{ personne.id }} - {{ personne.first_name }} - {{ personne.last_name }} - {{personne.email}} - <a href="{%url 'url_persona_details' personne.id %}">Voir le profil</a>
+                </li>
+            {% endfor %}
+        <ul>
+        <a class="btn btn-success link_list" href={%url 'url_persona_generate' %}>Générer une Nouvelle Personne</a>
+        
+{% endblock content %}
